@@ -30,11 +30,15 @@ const tim = new Person("tim", 29, "marketing");
 console.log(tim.getJob());
 
 class PostalWorker extends Person {
-  constructor(name, age, job) {
+  constructor(name, age, job, eyeColor) {
     super(name, age, job);
+    this.eyeColor = eyeColor;
   }
   getDesc() {
     console.log(`${this.name} works as a full-time ${this.job}`);
+  }
+  getEyecolor() {
+    console.log(`${this.name} has a beatuiful ${this.eyeColor} eyes`);
   }
 }
 
@@ -47,8 +51,8 @@ class Chef extends Person {
   }
 }
 
-const worker1 = new PostalWorker("Tod", 30, "social worker");
-const worker2 = new PostalWorker("Judy", 32, "IT");
+const worker1 = new PostalWorker("Tod", 30, "social worker", "blue");
+const worker2 = new PostalWorker("Judy", 32, "IT", "brown");
 worker1.getDesc();
 worker2.getDesc();
 console.log(worker1.getJob());
@@ -73,7 +77,7 @@ class BankAccount {
     console.log(
       `${this.ownerName}, you deposit $500 in your account ${
         this.acctNum
-      }, the balance is $ ${Number(this.balance) + 500} now`
+      }, the balance is $ ${this.balance + 500} now`
     );
   }
   withdraw() {
@@ -81,7 +85,7 @@ class BankAccount {
       `Hey ${
         this.ownerName
       }, you just withdrawed $300 from your account,and the balance is $ ${
-        Number(this.balance) - 300
+        this.balance - 300
       } `
     );
   }
