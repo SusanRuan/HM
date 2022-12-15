@@ -1,6 +1,6 @@
 let mainEl = document.querySelector("main");
 
-mainEl.innerHTML = "<h1>SEI Rocks!</h1>";
+mainEl.innerHTML = "<h1>SEI Rocks! Susan</h1>";
 mainEl.classList.add("flex-ctr");
 
 let topMenuEl = document.getElementById("top-menu");
@@ -24,10 +24,3 @@ menuLinks.forEach((e) => {
   a.style.color = "white";
   topMenuEl.appendChild(a);
 });
-
-// let a = document.createElement("a");
-
-// a.setAttribute("href", "https://www.google.com");
-// a.textContent = "google";
-// a.style.color = "white";
-// body.appendChild(a);
