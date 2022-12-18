@@ -15,19 +15,21 @@
 // console.log(case1);
 
 function solution(obj, operation, prop, newValue) {
-  if (operation === "delete") {
+  if (operation === "delete" && obj.hasOwnProperty(prop)) {
     delete obj[prop];
-  } else if (operation === "edit") {
+  } else if (operation === "edit" && obj.hasOwnProperty(prop)) {
     obj[prop] = newValue;
   }
-  console.log(obj);
+  for (const [key, value] of Object.entries(obj)) {
+    console.log(`${key} ${value}`);
+  }
 }
 let obj = {
-  name: "John",
-  lastName: "Bliss",
   city: "florida",
+  lastName: "Bliss",
+  name: "John",
 };
 
 solution(obj, "edit", "city", "seattle");
-solution(obj, "delete", "city", "seattle");
-solution(obj, "edit", "abc", "Tor");
+// solution(obj, "delete", "city", "seattle");
+// solution(obj, "edit", "abc", "Tor");
