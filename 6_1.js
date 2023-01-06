@@ -37,66 +37,31 @@ every2(panagram);
 
 /// filter
 
-nums.map((x) => {
-  if (x < 4) console.log(x);
-});
+const result1 = nums.filter((x) => x < 4);
+console.log(result1);
 
-panagram.map((y) => {
-  if (y.length % 2 === 0) console.log(y);
-});
+const result2 = panagram.filter((word) => word.length % 2 === 0);
+console.log(result2);
 
 /// find
-let y = [];
-nums.map((x) => {
-  if (x % 5 === 0) {
-    y.push(x);
-  }
-});
 
-if (y.length > 0) {
-  console.log(y[0]);
+const found1 = nums.find((element) => element % 5 === 0);
+console.log(found1);
+
+const found2 = panagram.find((element) => element.length > 5);
+if (found2) {
+  console.log(found2);
 } else {
-  console.log("no number");
+  console.log("no word is longer than 5");
 }
 
-let z = [];
-panagram.map((x) => {
-  if (x.length > 5) {
-    z.push(x);
-  }
-});
-if (z.length > 0) {
-  console.log(z[0]);
-} else {
-  console.log("no word");
-}
+/// find index
 
-/// fin index
+const num1 = (element) => element % 3 === 0;
+console.log(nums.findIndex(num1));
 
-let yIndex = [];
-nums.map((x, i) => {
-  if (x % 3 === 0) {
-    yIndex.push(i);
-  }
-});
-
-if (yIndex.length > 0) {
-  console.log(yIndex[0]);
-} else {
-  console.log("no number index");
-}
-
-let zIndex = [];
-panagram.map((x, i) => {
-  if (x.length < 2) {
-    zIndex.push(i);
-  }
-});
-if (zIndex.length > 0) {
-  console.log(zIndex[0]);
-} else {
-  console.log("no word index");
-}
+const word1 = (element) => element.length < 2;
+console.log(panagram.findIndex(word1));
 
 // for each
 
@@ -125,27 +90,8 @@ console.log(map3);
 
 /// some
 
-let q = [];
-nums.map((x) => {
-  if (x % 7 === 0) {
-    q.push(x);
-  }
-});
+const result3 = nums.filter((x) => x % 7 === 0);
+console.log(result3);
 
-if (q.length > 0) {
-  console.log(q);
-} else {
-  console.log("no number canbe divided by 7");
-}
-
-let p = [];
-panagram.map((x) => {
-  if (x.includes("a")) {
-    p.push(x);
-  }
-});
-if (p.length > 0) {
-  console.log(p);
-} else {
-  console.log("no word contains letter a");
-}
+const result4 = panagram.filter((word) => word.includes("a"));
+console.log(result4);
